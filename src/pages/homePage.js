@@ -4,7 +4,7 @@ import MovieList from "../components/movieList";
 import FilterControls from "../components/filterControls";
 
 const MovieListPage = () => {
-    const [titleFilter, setTitleFilter] = useState("");       // NEW
+    const [titleFilter, setTitleFilter] = useState("");       
     const [genreFilter, setGenreFilter] = useState("0");
 
     const [movies, setMmovies] = useState([]);
