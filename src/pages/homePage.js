@@ -8,7 +8,7 @@ const MovieListPage = () => {
     const [titleFilter, setTitleFilter] = useState("");
     const [genreFilter, setGenreFilter] = useState("0");
 
-    const [movies, setMmovies] = useState([]);
+    const [movies, setMovies] = useState([]);
     useEffect(() => {
         fetch(
             `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
@@ -19,7 +19,7 @@ const MovieListPage = () => {
                 return json.results
             })
             .then(movies => {
-                setMmovies(movies);
+                setMovies(movies);
             });
     }, []);
 
