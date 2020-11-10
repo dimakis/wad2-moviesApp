@@ -6,24 +6,14 @@ import MoviePage from './pages/movieDetailsPage'
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"    
 import FavoriteMoviesPage from './pages/favoriteMoviesPage'      
 import MovieReviewPage from "./pages/movieReviewPage";
+import SiteHeader from './components/siteHeader'
 
 const App = () => {
   return (
     <BrowserRouter>
     <div className="jumbotron">
+    <SiteHeader />      {/* New Header  */}
       <div className="container-fluid">
-        <ul className="navbar-nav text-black">
-          <li className="nav-item">
-            <Link className="nav-link " to="/">
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link " to="/movies/favorites">
-              Favorites
-            </Link>
-          </li>
-        </ul>
         <Switch>
         <Route path="/reviews/:id" component={MovieReviewPage} />     //placed this hear as laid out in lab3.3
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
