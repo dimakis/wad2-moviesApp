@@ -3,27 +3,29 @@ import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
-import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"    
-import FavoriteMoviesPage from './pages/favoriteMoviesPage'      
+import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"
+import FavoriteMoviesPage from './pages/favoriteMoviesPage'
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
+import UpcomingMoviesPage from './pages/upcomingMoviesPage'
 
 const App = () => {
   return (
     <BrowserRouter>
-    <div className="jumbotron">
-    <SiteHeader />      {/* New Header  */}
-      <div className="container-fluid">
-        <Switch>
-        <Route path="/reviews/:id" component={MovieReviewPage} />     //placed this hear as laid out in lab3.3
+      <div className="jumbotron">
+        <SiteHeader />      {/* New Header  */}
+        <div className="container-fluid">
+          <Switch>
+            <Route path="/reviews/:id" component={MovieReviewPage} />     //placed this hear as laid out in lab3.3
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-          <Route path="/movies/:id" component={MoviePage} />
-          <Route path="/" component={HomePage} />
-          <Redirect from="*" to="/" />
-        </Switch>
+            <Route exact path="/movies/upcomingMovies" component={UpcomingMoviesPage} />
+            <Route path="/movies/:id" component={MoviePage} />
+            <Route path="/" component={HomePage} />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </div>
       </div>
-    </div>
-  </BrowserRouter>
+    </BrowserRouter>
   );
 };
 
