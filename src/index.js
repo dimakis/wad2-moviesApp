@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
-import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"    // CHANGED
-import FavoriteMoviesPage from './pages/favoriteMoviesPage'       // NEW
+import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"    
+import FavoriteMoviesPage from './pages/favoriteMoviesPage'      
+import MovieReviewPage from "./pages/movieReviewPage";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           </li>
         </ul>
         <Switch>
+        <Route path="/reviews/:id" component={MovieReviewPage} />     //placed this hear as laid out in lab3.3
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />
