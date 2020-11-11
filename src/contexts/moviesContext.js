@@ -47,7 +47,7 @@ const MoviesContextProvider = (props) => {
 
   // this method is not finished
   const addToWatchList = (movieId) => {
-    const index = state.movies.map((m) => m.id).indexOf(movieId);
+    const index = state.upcoming.map((m) => m.id).indexOf(movieId);
     dispatch({ type: "add-watchList", payload: { movie: state.upcoming[index] } });
   };
   
@@ -76,8 +76,8 @@ const MoviesContextProvider = (props) => {
         movies: state.movies,
         upcoming: state.upcoming,
         addToFavorites: addToFavorites,
-        addToWatchList: addToWatchList,
         addReview: addReview,
+        addToWatchList: addToWatchList,
       }}
     >
       {props.children}
