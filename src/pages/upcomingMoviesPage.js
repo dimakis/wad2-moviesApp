@@ -8,7 +8,7 @@ import AddToFavoritesButton from '../components/buttons/addToFavorites'
 const UpcomingMoviesListPage = () => {
     const context = useContext(MoviesContext);
     const upcomingMovies = context.upcoming.filter((m) => {
-        return !("watchList" in m);
+        return !("wa" in m);
     });
 
 
