@@ -48,7 +48,7 @@ const MoviesContextProvider = (props) => {
   // this method is not finished
   const addToWatchList = (movieId) => {
     const index = state.movies.map((m) => m.id).indexOf(movieId);
-    dispatch({ type: "add-watchList", payload: { movie: state.movies[index] } });
+    dispatch({ type: "add-watchList", payload: { movie: state.upcoming[index] } });
   };
   
 

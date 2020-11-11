@@ -12,11 +12,11 @@ const AddToWatchlistButton = ({ movie }) => {
     <button
       type="button"
       className="btn w-100 btn-primary"
-      onClick={handleAddToFavorite}
+      onClick={handleAddToWatchList}
     >
-      Add to Favorites
+      Add to WatchList
     </button>
   );
 };
 
-export default AddToFavoriteButton;
+export default AddToWatchlistButton;
